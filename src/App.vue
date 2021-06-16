@@ -1,142 +1,22 @@
 <template>
   <div class="contain">
-    <div class="slider">
-      <page titulo="Categoria"></page>
-      <span v-on:mouseover="scrollEsquerda()" v-on:mouseout="clearScroll()" class="handle handlePrev active">
-        <i class="fa fa-caret-left" aria-hidden="true"></i>
-      </span>
-
-      <div id="scroller" class="row">
-        <div class="row__inner">
-          <div class="category-card">
-            <div class="category-card__media">
-              <img
-                class="category-card__img"
-                src="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"
-                alt=""
-              />
-            </div>
-            <div class="category-card__details">
-              <div class="category-card__title">Assassin’s Creed</div>
-            </div>
-          </div>
-          <div class="category-card">
-            <div class="category-card__media">
-              <img
-                class="category-card__img"
-                src="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"
-                alt=""
-              />
-            </div>
-            <div class="category-card__details">
-              <div class="category-card__title">Assassin’s Creed</div>
-            </div>
-          </div>
-          <div class="category-card">
-            <div class="category-card__media">
-              <img
-                class="category-card__img"
-                src="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"
-                alt=""
-              />
-            </div>
-            <div class="category-card__details">
-              <div class="category-card__title">Assassin’s Creed</div>
-            </div>
-          </div>
-          <div class="category-card">
-            <div class="category-card__media">
-              <img
-                class="category-card__img"
-                src="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"
-                alt=""
-              />
-            </div>
-            <div class="category-card__details">
-              <div class="category-card__title">Assassin’s Creed</div>
-            </div>
-          </div>
-          <div class="category-card">
-            <div class="category-card__media">
-              <img
-                class="category-card__img"
-                src="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"
-                alt=""
-              />
-            </div>
-            <div class="category-card__details">
-              <div class="category-card__title">Assassin’s Creed</div>
-            </div>
-          </div>
-          <div class="category-card">
-            <div class="category-card__media">
-              <img
-                class="category-card__img"
-                src="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"
-                alt=""
-              />
-            </div>
-            <div class="category-card__details">
-              <div class="category-card__title">Assassin’s Creed</div>
-            </div>
-          </div>
-          <div class="category-card">
-            <div class="category-card__media">
-              <img
-                class="category-card__img"
-                src="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"
-                alt=""
-              />
-            </div>
-            <div class="category-card__details">
-              <div class="category-card__title">Assassin’s Creed</div>
-            </div>
-          </div>
-          <div class="category-card">
-            <div class="category-card__media">
-              <img
-                class="category-card__img"
-                src="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"
-                alt=""
-              />
-            </div>
-            <div class="category-card__details">
-              <div class="category-card__title">Assassin’s Creed</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <span v-on:mouseover="scrollDireita()" v-on:mouseout="clearScroll()" class="handle handleNext active">
-        <i class="fa fa-caret-right" aria-hidden="true"></i>
-      </span>
-    </div>
+    <categoria titulo="Comédia"></categoria>
+    <categoria titulo="Suspense"></categoria>
   </div>
 </template>
 
 <script>
-import page from './components/Page.vue'
-
+//import page from './components/Page.vue'
+import Categoria from './components/Categoria.vue'
 export default {
   name: "App",
   components: {
-    page
+    Categoria
   },
   data() {
     return {
       nomeProjeto: "Netflix com Vue",
       intervalo: null
-    }
-  },
-  methods: {
-    scrollDireita(){
-      this.intervalo = setInterval(function(){ document.getElementById('scroller').scrollLeft += 1 }  , 5);
-    },
-    scrollEsquerda(){
-      this.intervalo = setInterval(function(){ document.getElementById('scroller').scrollLeft -= 1 }  , 5);
-    },
-    clearScroll() {
-      clearInterval(this.intervalo);
     }
   }
 };
@@ -264,7 +144,7 @@ a:hover {
   padding-bottom: 10px;
 }
 
-.category-card {
+.film-card {
   position: relative;
   display: inline-block;
   width: 250px;
@@ -277,13 +157,13 @@ a:hover {
   -webkit-transform-origin: center left;
   transform-origin: center left;
 }
-.category-card__img {
+.film-card__img {
   width: 250px;
   height: 140.625px;
   -o-object-fit: cover;
   object-fit: cover;
 }
-.category-card__details {
+.film-card__details {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -304,15 +184,15 @@ a:hover {
   -webkit-transition: 450ms opacity;
   transition: 450ms opacity;
 }
-.category-card__details:after,
-.category-card__details:before {
+.film-card__details:after,
+.film-card__details:before {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
   display: #000;
 }
-.category-card__details:after {
+.film-card__details:after {
   margin-top: -25px;
   margin-left: -25px;
   width: 50px;
@@ -324,7 +204,7 @@ a:hover {
   background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
-.category-card__details:before {
+.film-card__details:before {
   content: "▶";
   left: 0;
   width: 100%;
@@ -334,10 +214,10 @@ a:hover {
   text-align: center;
   z-index: 2;
 }
-.category-card:hover .category-card__details {
+.film-card:hover .film-card__details {
   opacity: 1;
 }
-.category-card__title {
+.film-card__title {
   position: absolute;
   bottom: 0;
   padding: 10px;
@@ -346,15 +226,15 @@ a:hover {
   -webkit-transform: translate3d(-62.5px, 0, 0);
   transform: translate3d(-62.5px, 0, 0);
 }
-.row__inner:hover .category-card {
+.row__inner:hover .film-card {
   opacity: 0.3;
 }
-.row__inner:hover .category-card:hover {
+.row__inner:hover .film-card:hover {
   -webkit-transform: scale(1.5);
   transform: scale(1.5);
   opacity: 1;
 }
-.category-card:hover ~ .category-card {
+.film-card:hover ~ .film-card {
   -webkit-transform: translate3d(125px, 0, 0);
   transform: translate3d(125px, 0, 0);
 }
