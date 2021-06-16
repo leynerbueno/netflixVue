@@ -11,14 +11,12 @@
 
     <div ref="scroller" class="row">
       <div class="row__inner">
-        <filme titulo="Outro titulo"  imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"></filme>
-        <filme titulo="Outro titulo1"  imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"></filme>
-        <filme titulo="Outro titulo2"  imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"></filme>
-        <filme titulo="Outro titulo3"  imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"></filme>
-        <filme titulo="Outro titulo4"  imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"></filme>
-        <filme titulo="Outro titulo5"  imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"></filme>
-        <filme titulo="Outro titulo6"  imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"></filme>
-        <filme titulo="Outro titulo7"  imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"></filme>
+        <filme
+          v-for="filme in filmes"
+          v-bind:key="filme.id"
+          v-bind:titulo="filme.titulo"
+          v-bind:imagem="filme.imagem"
+        ></filme>
       </div>
     </div>
 
@@ -36,7 +34,7 @@ import Filme from "./Filme.vue";
 
 export default {
   name: "page",
-  props: ["titulo"],
+  props: ["titulo", "filmes"],
   components: {
     Filme,
   },

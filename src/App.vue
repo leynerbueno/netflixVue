@@ -1,24 +1,79 @@
 <template>
   <div class="contain">
-    <categoria titulo="Comédia"></categoria>
-    <categoria titulo="Suspense"></categoria>
+    <categoria v-for="categoria in categorias" v-bind:key="categoria.id" v-bind:titulo="categoria.titulo" v-bind:filmes="categoria.filmes"></categoria>
   </div>
 </template>
 
 <script>
 //import page from './components/Page.vue'
-import Categoria from './components/Categoria.vue'
+import Categoria from "./components/Categoria.vue";
 export default {
   name: "App",
   components: {
-    Categoria
+    Categoria,
   },
   data() {
     return {
       nomeProjeto: "Netflix com Vue",
-      intervalo: null
-    }
-  }
+      intervalo: null,
+      categorias: [
+        {
+          id: 1,
+          titulo: "Ação",
+          filmes: [
+            {
+              id: 1,
+              titulo: "Assassin's Creed 1",
+              imagem:
+                "https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700",
+            },
+            {
+              id: 2,
+              titulo: "Assassin's Creed 2",
+              imagem:
+                "https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700",
+            },
+            {
+              id: 3,
+              titulo: "Assassin's Creed 3",
+              imagem:
+                "https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700",
+            },
+            {
+              id: 4,
+              titulo: "Assassin's Creed 4",
+              imagem:
+                "https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700",
+            },
+            {
+              id: 5,
+              titulo: "Assassin's Creed 5",
+              imagem:
+                "https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700",
+            },
+            {
+              id: 6,
+              titulo: "Assassin's Creed 6",
+              imagem:
+                "https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700",
+            },
+            {
+              id: 7,
+              titulo: "Assassin's Creed 7",
+              imagem:
+                "https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700",
+            },
+            {
+              id: 8,
+              titulo: "Assassin's Creed 8",
+              imagem:
+                "https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700",
+            },
+          ],
+        },
+      ],
+    };
+  },
 };
 </script>
 
