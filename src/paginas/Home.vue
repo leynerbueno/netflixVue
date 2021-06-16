@@ -6,7 +6,7 @@
 
 <script>
 //import page from './components/Page.vue'
-import Categoria from "./components/Categoria.vue";
+import Categoria from "../components/Categoria.vue";
 export default {
   name: "App",
   components: {

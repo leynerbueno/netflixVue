@@ -1,6 +1,6 @@
 # netflix_vue
 
-> Recriando a interface da Netflix utilizando Vue.js
+> Projeto para aperfeiçoamento de conhecimento em vue, recriando uma parte da interface da netflix utilizando Vue.js
 
 ## Build Setup
 
